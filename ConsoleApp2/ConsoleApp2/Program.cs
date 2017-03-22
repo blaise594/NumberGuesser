@@ -13,17 +13,16 @@ namespace ConsoleApp2
             var target = new Random().Next(1, 101);
             Console.WriteLine($"the target is {target}");
 
-           Console.WriteLine($"Guess now");
             var counter = 0;
-            while (counter < 5)
-            {
+            var guess = 0;
+            while (counter < 5 && guess != target)
+            { 
+                Console.WriteLine($"Guess now");    
                 var input = Console.ReadLine();
-                var guess = 0;
                 int.TryParse(input, out guess);
 
                 Console.WriteLine("You guessed {guess}");
-
-
+                
                 if (guess < target)
                 {
                     Console.WriteLine("Your guess was too low");
@@ -32,9 +31,12 @@ namespace ConsoleApp2
                 {
                     Console.WriteLine("Your guess was too high");
                 }
+                counter++;
             }
+            
+            if()
         }
-
+        
     }
 
 }
