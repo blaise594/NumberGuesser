@@ -16,13 +16,13 @@ namespace ConsoleApp2
             var counter = 0;
             var guess = 0;
             while (counter < 5 && guess != target)
-            { 
-                Console.WriteLine($"Guess now");    
+            {
+                Console.WriteLine($"Guess now");
                 var input = Console.ReadLine();
                 int.TryParse(input, out guess);
 
-                Console.WriteLine("You guessed {guess}");
-                
+                Console.WriteLine($"You guessed {guess}");
+
                 if (guess < target)
                 {
                     Console.WriteLine("Your guess was too low");
@@ -33,10 +33,15 @@ namespace ConsoleApp2
                 }
                 counter++;
             }
-            
-            if()
-        }
-        
-    }
 
+            if (counter > 4)
+            {
+                Console.WriteLine("You lost");
+            }
+            else
+            {
+                Console.WriteLine("You won!");
+            }
+}    
+    }
 }
